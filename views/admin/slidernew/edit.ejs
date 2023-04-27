@@ -1,0 +1,32 @@
+<%- include('../sidebar.ejs') %>
+    <%- include('../header.ejs') %>
+
+        <div class="modal-body" style="margin-left: 25px;
+        margin-right: 25px;">
+            <form method="post" action="/admin/sliderupdate/<%= edit._id %>" enctype="multipart/form-data">
+
+                <div class="mb-3">
+                    <label for="">Title</label>
+                    <input type="text" name="title" class="form-control" value="<%= edit.title %>">
+                </div>
+
+                <div class="mb-3">
+                    <label for="">Description</label>
+                    <textarea type="text" name="description" class="form-control"><%=
+                        edit.description %></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="">Upload image</label>
+                    <input type="file" name="image" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <img src="<%= edit.image.url %> " width="100px" alt="">
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-info">Update</button>
+                </div>
+            </form>
+        </div>
+
+
+        <%- include('../footer.ejs') %>

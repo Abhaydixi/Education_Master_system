@@ -1,0 +1,126 @@
+<%- include('./header.ejs') %>
+
+<!--slider start-->
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+
+    <div class="carousel-inner">
+        <% s1.forEach((item)=>{%>
+            <div class="carousel-item active">
+                <img src="<%= item.image.url %>" class="d-block w-100" style="height: 550px;" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>
+                        <%= item.title %>
+                    </h1>
+                    <p style="font-size: 25px;">
+                        <%= item.description %>
+                    </p>
+                </div>
+            </div>
+            <% }) %>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<!--slider end-->
+
+<div class="mt-5 text-center">
+    <h1>
+        <a style="color: #f80;"><%= s.schoolname %></a>
+        <p style="font-size: medium;"><%= s.address %></p>
+        <p style="font-size: medium; text-align: justify; padding-left: 69px;
+        padding-right: 78px;"><%= s.description %>  </p>
+    </h1>
+</div>
+   
+<div class="container shadow-lg mt-5" style="border-radius: 1rem 1rem 1rem 1rem;">
+    <div class="row">
+        <div class="mt-5"></div>
+        <h3 style="color: #f80;"><%= s.schoolname %> Address on Map</h3>
+        
+    </div>
+</div>
+
+<div class="container shadow-lg mt-5" style="border-radius: 1rem 1rem 1rem 1rem;">
+    <div class="row">
+     
+        <div class="mt-5 ">
+            <h3 style="color: #f80;" class="text-center"><%= s.schoolname %> Basic Details</h3>
+        </div>
+        <table class="table col-md-12 col-sm-12 col-xs-12 ">
+            <tbody>
+                <tr>
+                    <td>
+                        <p><b>Instruction Medium</b></p>
+                    </td>
+                    <td>
+                        <p><%= s.instruction_medium %></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p><b>Affiliated Board</b></p>
+                    </td>
+                    <td>
+                        <p><%= s.affiliated_board %></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p><b>Type</b></p>
+                    </td>
+                    <td>
+                        <p><%= s.type %></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p><b>Phone Number</b></p>
+                    </td>
+                    <td>
+                        <p><%= s.phone_number %></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p><b>Email</b></p>
+                    </td>
+                    <td>
+                        <p><%= s.email %></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p><b>Library</b></p>
+                    </td>
+                    <td>
+                        <p><%= s.library %></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p><b>India Rank</b></p>
+                    </td>
+                    <td>
+                        <p><%= s.india_rank %></p>
+                    </td>
+                </tr>
+               
+            </tbody>
+        </table>
+
+
+      
+    </div><!--row end-->
+</div><!--container end-->
+
+
+
+<%- include('./footer.ejs') %>

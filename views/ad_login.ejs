@@ -1,0 +1,63 @@
+<%- include('./header.ejs') %>
+
+
+
+    <section style="background-color: #6696a0; height: 700px;">
+        <div class="container">
+            <div class="row d-flex justify-content-center align-items-center h-100 mb-5">
+                <div class="col col-xl-10 ">
+                    <div class="card" style="border-radius: 1rem; margin-top: 120px;">
+                        <div class="row "><br>
+                            <div class="col-md-6 col-lg-5 d-none d-md-block">
+                                <img src="/images/usadm.webp" alt="login" class="img-fluid"
+                                    style="border-radius: 1rem 0 0 1rem;">
+                            </div>
+                            <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                                <div class="card-body p-4 text-black">
+                                    <div class="d-flex align-items-center pb-1">
+                                        <img src="/images/adimg.jpeg" class="register_logo" width="150px" height="150px"
+                                            alt="....">
+                                    </div>
+                                    <h4 class="text-center  mb-3 pb-3" style="color: #6696a0;">Admin Login</h4>
+                                    <% if(message.length> 0){ %>
+                                        <div class="alert alert-danger">
+                                            <%= message %>
+                                        </div>
+                                        <% } %>
+
+                                            <form action="/veryfylogin" method="post" class="pt-4">
+                                                <div class="form-group mb-4">
+                                                    <input type="text" name="email" class="form-control form-control-lg"
+                                                        placeholder="email">
+                                                </div>
+                                                <div class="form-group mb-4">
+                                                    <input type="password" name="password"
+                                                        class="form-control form-control-lg" placeholder="password">
+                                                </div>
+                                                <div class="form-group text-center">
+                                                    <button type="submit" class="btn btn-lg btn-block form-control"
+                                                        style="background: #12587a; color:#ffff;">Log In</button>
+                                                    <br>
+                                                    <!-- <div class="mt-4">
+                                                    <span class=" mb-5 pb-lg-2">DON`T HAVE AN ACCOUNT?</span>
+                                                    <a href="/registration" style="color: #393f81;">REGISTER NOW</a>
+                                                    <br>
+                                                    
+                                                </div> -->
+                                                </div>
+                                            </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--row end-->
+        </div><!--container end-->
+        <br><br><br><br><br><br>
+
+    </section>
+
+
+
+
+    <%- include('./footer.ejs') %>

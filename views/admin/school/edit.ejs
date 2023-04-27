@@ -1,0 +1,78 @@
+<%- include('../sidebar.ejs') %>
+<%- include('../header.ejs') %>
+
+
+<div class="content mt-3 shadow-lg">
+    <div class="animated fadeIn">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <div>
+                            <strong class="card-title  text-secondary">School Update</strong>
+                        </div>
+                        
+                    </div>
+                    <div class="card-body">
+                        <form action="/schoolupdate/<%= edit._id %>" method="post">
+                            <div class="mb-3">
+                                <label for="">Image</label>
+                                <input type="file" class="form-control" name="image">
+                                <img src="<%= edit.image.url %>" class="w-25 mt-3" alt="">
+                                <div><button type="submit" class="btn btn-info mt-3">Upload</button></div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="">School Name</label>
+                                <input type="text" class="form-control" name="schoolname" value="<%= edit.schoolname %>">
+                            </div>
+                            <div class="mb-3">
+                                <label for="">Address:</label>
+                                <textarea type="" name="address" class="form-control"><%= edit.address %></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="">Description:</label>
+                                <textarea type="text" name="description" class="form-control"><%= edit.description %></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="">Instruction_Medium</label>
+                                <input type="text" class="form-control" name="instruction_medium" value="<%= edit.instruction_medium %>">
+                            </div>
+                            <div class="mb-3">
+                                <label for="">Affiliated_Board</label>
+                                <input type="text" class="form-control" name="affiliated_board" value="<%= edit.affiliated_board %>">
+                            </div>
+                            <div class="mb-3">
+                                <label for="">Type</label>
+                                <input type="text" class="form-control" name="type" value="<%= edit.type %>">
+                            </div>
+                            <div class="mb-3">
+                                <label for="">Phone_Number</label>
+                                <input type="number" class="form-control" name="phone_number" value="<%= edit.phone_number %>">
+                            </div>
+                            <div class="mb-3">
+                                <label for="">Email</label>
+                                <input type="email" class="form-control" name="email" value="<%= edit.email %>">
+                            </div>
+                            <div class="mb-3">
+                                <label for="">Library</label>
+                                <input type="text" class="form-control" name="library" value="<%= edit.library %>">
+                            </div>
+                            <div class="mb-3">
+                                <label for="">India_Rank</label>
+                                <input type="text" class="form-control" name="india_rank" value="<%= edit.india_rank %>">
+                            </div>
+                            <button type="submit" class="btn btn-info">Update</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- .animated -->
+
+
+</div><!-- .content -->
+</div><!-- /#right-panel -->
+
+
+
+<%- include('../footer.ejs') %>

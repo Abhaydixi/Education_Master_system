@@ -1,0 +1,48 @@
+<%- include('../sidebar.ejs') %>
+    <%- include('../header.ejs') %>
+
+
+        <div class="content mt-3">
+            <div class="animated fadeIn">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between">
+                                <div>
+                                    <strong class="card-title  text-secondary">City Update</strong>
+                                </div>
+
+                            </div>
+                            <div class="card-body">
+
+
+                                <form action="/catupdate/<%= edit._id %>" method="post" enctype="multipart/form-data">
+                                    <div class="mb-3">
+                                        <label for="">City Name</label>
+                                        <input type="text" class="form-control" name="title" value="<%= edit.title %>">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="">Upload image:</label>
+                                        <input type="file" name="image" class="form-control" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <img src="<%= edit.cityimage.url %>" width="150px" alt="">
+                                    </div>
+
+                                    <button type="submit" class="btn btn-info">Update </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- .animated -->
+
+
+        </div><!-- .content -->
+        </div><!-- /#right-panel -->
+
+
+
+
+
+        <%- include('../footer.ejs') %>
