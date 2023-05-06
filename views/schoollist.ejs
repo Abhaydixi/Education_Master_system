@@ -1,37 +1,37 @@
 <%- include('./header.ejs') %>
- <!--slider start-->
- <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <!--slider start-->
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
 
-    <div class="carousel-inner">
-        <% s.forEach((item)=>{%>
-            <div class="carousel-item active">
-                <img src="<%= item.image.url %>" class="d-block w-100" style="height: 550px;" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h1>
-                        <%= item.title %>
-                    </h1>
-                    <p style="font-size: 25px;">
-                        <%= item.description %>
-                    </p>
+        <div class="carousel-inner">
+            <% s.forEach((item)=>{%>
+                <div class="carousel-item active">
+                    <img src="<%= item.image.url %>" class="d-block w-100" style="height: 550px;" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1>
+                            <%= item.title %>
+                        </h1>
+                        <p style="font-size: 25px;">
+                            <%= item.description %>
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <% }) %>
+                <% }) %>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-        data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-        data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-</div>
-<!--slider end-->
+    <!--slider end-->
 
-<!------ search start---->
-<!-- <div class="container-fluid bg-secondary mb-5" style="padding: 30px;">
+    <!------ search start---->
+    <!-- <div class="container-fluid bg-secondary mb-5" style="padding: 30px;">
     <div class="container">
         <div class="row g-2">
             <div class="col-md-12">
@@ -52,47 +52,55 @@
 
 </div> -->
 
-<!------Search end------>
+    <!------Search end------>
 
 
-<div class="mt-5 text-center">
-    <h1>
-        <a style="color: #f80;">Top Schools of <%= cityName %></a>
-    </h1>
+    <div class="mt-5 text-center">
+        <h1>
+            <a style="color: #f80;">Top Schools of <%= cityName %></a>
+        </h1>
 
-</div>
+    </div>
 
 
-<div class="container ">
-    <div class="row">
-        <% schoollist.forEach((s)=>{ %>
-            <div class="col-md-4 mt-5">
-                <a href="/besicdetails/<%= s._id %>">
-                <img src="<%= s.image.url %>"
-                    class="w-100" style="height: 280px;" alt=""></a>
-            </div>
-            <div class="col-md-8 mt-3">
-                <a href="/besicdetails/<%= s._id %>" style="text-decoration: none;">
-                <h3 style="color: #f80;"><%= s.schoolname %></h3>
-                 </a>
-                <p style="font-size: 10px;"><%= s.address %></p>
-                <p><%= s.description %></p>
-
-                         <a href="/besicdetails/<%= s._id %>">
-                        <button class="btn btn-info">More...</button>
+    <div class="container ">
+        <div class="row">
+            <% schoollist.forEach((s)=>{ %>
+                <div class="col-md-4 mt-5">
+                    <a href="/besicdetails/<%= s._id %>">
+                        <div class="box">
+                            <img src="<%= s.image.url %>" class="w-100" style="height: 280px;" alt="">
                     </a>
+                </div>
+        </div>
+        <div class="col-md-8 mt-3">
+            <a href="/besicdetails/<%= s._id %>" style="text-decoration: none;">
+                <h3 style="color: #f80;">
+                    <%= s.schoolname %>
+                </h3>
+            </a>
+            <p style="font-size: 10px;">
+                <%= s.address %>
+            </p>
+            <p>
+                <%= s.description %>
+            </p>
+
+            <a href="/besicdetails/<%= s._id %>">
+                <button class="btn btn-info">More...</button>
+            </a>
 
 
-                    <!-- <a href="/besicdetails/<%= s._id %>">
+            <!-- <a href="/besicdetails/<%= s._id %>">
                         <button class="btn btn-info">More...</button>
                     </a> -->
-            </div>
+        </div>
 
-       <% })%>
-        
+        <% })%>
+
     </div>
-</div>
+    </div>
 
 
 
-<%- include('./footer.ejs') %>
+    <%- include('./footer.ejs') %>

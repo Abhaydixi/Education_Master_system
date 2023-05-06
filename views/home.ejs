@@ -71,7 +71,9 @@
             <% c.forEach((item)=>{ %>
                 <div class="col-md-4 text-center mb-5 ">
                     <a href="/schoollist/<%= item.title %>" class="text-decoration-none">
-                        <img src="<%= item.cityimage.url %>" class="image w-100" alt="">
+                        <div class="box">
+                            <img src="<%= item.cityimage.url %>" class="image w-100" alt="">
+                        </div>
                         <h3 class="ab animate__heartBeat">
                             <%= item.title %>
                         </h3>
